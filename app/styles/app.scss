@@ -1,0 +1,142 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  height: 100%;
+  background: url("/assets/riddler.jpg") no-repeat;
+  background-size: cover;
+}
+
+.question-text{
+  color: #0099FF;
+}
+
+.user-name {
+  color: #FFA347;
+}
+
+.chat {
+    font-family:      sans-serif;
+    font-size:        small;
+    margin:           20px 20px;
+    padding:          10px;
+    border:           1px solid #aaa;
+}
+
+.bubble {
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius:    5px;
+    border:           1px solid #bbb;
+    box-shadow:       0 1px 6px #B2B2B2;
+    display:          block;
+    padding:          10px 18px;
+    margin:           0px;
+    position:         relative;
+    vertical-align:   top;
+    white-space: pre-line;
+    word-break: normal;
+    word-wrap: normal;
+}
+
+.bubble.left {
+    text-align: left;
+}
+
+.bubble.right {
+    text-align: right;
+}
+
+.answer-header {
+  font-family: Helvetica;
+  font-size: 22px;
+}
+
+.question-list {
+  margin-top: 15px;
+  > a {
+    display: block;
+    &:hover {
+      background: rgba(255,255,255,.5);
+      text-decoration: none;
+    };
+  };
+  li {
+    padding: 10px 0;
+    border-bottom: 1px solid #111;
+    a {
+      line-height: 30px;
+    };
+  };
+}
+
+.add-question {
+  text-align: center;
+  text-shadow: none;
+
+  .btn {
+    width: 60%;
+  }
+}
+
+.question-details li span:first-child {
+  display: inline-block;
+  width: 75px;
+}
+
+.circle {
+  font-size: 13px;
+  float: right;
+  display: inline-block;
+  width: 30px;
+  height: 24px;
+  text-align: center;
+  text-shadow: none;
+  color: white;
+  background: url('/assets/comment-bubble.png') no-repeat;
+  background-size: 43px;
+  background-position: -8px -11px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: url(/assets/overlay4.png) repeat rgba(0,0,0,0.3);
+  height: 100%;
+}
+
+.lead {
+  margin-top: 45px;
+}
+
+.light-overlay {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(255,255,255, 0.85);
+}
+.stroke {
+  color: #000;
+  text-shadow:
+  -1px -1px 0 #ddd,
+  1px -1px 0 #ddd,
+  -1px 1px 0 #ddd,
+  1px 1px 0 #ddd;
+}

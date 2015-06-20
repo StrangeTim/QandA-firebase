@@ -1,3 +1,30 @@
-<h3>User: &nbsp;<span class="user-name">{{model.user}}</span> &nbsp;asks about: &nbsp;<span class="question-text">{{model.questionText}}</span></h3>
-<br>
-{{model.questionBody}}
+{{#if isEditing}}
+  {{partial 'question/edit'}}
+  <button class='btn btn-primary' {{action 'doneEditing'}}>Done</button>
+{{else}}
+  <h3>User: &nbsp;<span class="user-name">{{model.user}}</span> &nbsp;asks about: &nbsp;<span class="question-text">{{model.questionText}}</span></h3>
+  <div class="chat">
+    {{model.questionBody}}
+  </div>
+  <br><br>
+  <button class='btn btn-warning' {{action 'edit'}}>Edit</button>
+  <button class='btn btn-danger' {{action 'delete'}}>Delete</button>
+{{/if}}
+<br><br>
+<div class="add-answer">
+  {{#link-to 'new-answer'}}<button class="btn btn-info">Provide an answer?</button>{{/link-to}}
+</div>
+
+{{outlet}}
+<div class="chat">
+  <h4>Question - Answered</h4>
+  <ul class="list-unstyled">
+    {{#each answer in model.answers}}
+      <li><span class="answer-header">{{answer.user}} says: </span>
+        <div class="bubble left">
+          {{answer.answerBody}}
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>

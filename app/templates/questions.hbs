@@ -1,19 +1,22 @@
-<h1>Our Knowledge Base</h1>
+<div class="light-overlay"></div>
+<span class="stroke">
+  <div class="col-sm-4">
+    <h3 class="text-center">Our Knowledge Base</h3>
 
-<div class="col-sm-4">
-  <div class='add-question'>
-    {{#link-to 'questions.new' classNames="btn btn-info"}}Ask us something?{{/link-to}}
+    <div class='add-question'>
+      {{#link-to 'questions.new' classNames="btn btn-info"}}Ask us something?{{/link-to}}
+    </div>
+
+    <ul class="question-list list-unstyled">
+      {{#each question in model}}
+        {{#link-to 'question' question.id}}
+          <li> {{question.questionText}} &nbsp;&nbsp; by: {{question.user}}</li>
+        {{/link-to}}
+      {{/each}}
+    </ul>
   </div>
 
-  <ul class="question-list list-unstyled">
-    {{#each question in model}}
-      {{#link-to 'question' question.id}}
-        <li> {{question.questionText}} </li>
-      {{/link-to}}
-    {{/each}}
-  </ul>
-</div>
-
-<div class="col-sm-8">
-  {{outlet}}
-</div>
+  <div class="col-sm-8">
+    {{outlet}}
+  </div>
+</span>

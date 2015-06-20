@@ -4,17 +4,18 @@ export default Ember.Controller.extend({
   actions: {
     addQuestion: function() {
       var newQuestion = this.store.createRecord('question', {
-        user: this.get('name'),
+        user: this.get('user'),
         questionText: this.get('questionText'),
         questionBody: this.get('questionBody')
       });
 
       newQuestion.save().then(function() {
         newQuestion.setProperties({
-          name: '',
+          user: '',
           questionText: '',
           questionBody: ''
-        });
+        }),
+        this.transitionToRoute('questions');
       });
     }
   }
